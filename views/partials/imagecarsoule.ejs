@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News Slider</title>
+<!-- Owl Carousel CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<style>
+    /* Custom navigation buttons */
+    .owl-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+    }
+    .owl-nav button {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #0e0e0e;
+        padding: 10px 15px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .owl-nav button:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    .owl-nav .owl-prev {
+        left: 0;
+    }
+    .owl-nav .owl-next {
+        right: 0;
+    }
+</style>
+</head>
+<body>
+
+<!-- Carousel -->
+<div class="owl-carousel owl-theme">
+    <div class="item">
+        <img src="/images/IMG_9194.jpg" alt="Image 1 Alt Text">
+    </div>
+    <div class="item">
+        <img src="/images/IMG_9206.jpg" alt="Image 2 Alt Text">
+    </div>
+    <div class="item">
+        <img src="/images/IMG_9207.jpg" alt="Image 3 Alt Text">
+    </div>
+    <div class="item">
+        <img src="/images/IMG_9208.jpg" alt="Image 4 Alt Text">
+    </div>
+    <!-- Add more carousel items as needed -->
+</div>
+
+<!-- Owl Carousel JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<!-- Custom JavaScript for adjusting carousel speed and continuous iteration -->
+<script>
+$(document).ready(function(){
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        autoplay: true,
+        autoplayTimeout: 2000, // Adjust the interval (in milliseconds) as needed
+        autoplayHoverPause: true,
+        // responsive:{
+        //     0:{
+        //         items:1
+        //     },
+        //     600:{
+        //         items:3
+        //     },
+        //     1000:{
+        //         items:5
+        //     }
+        // }
+    });
+});
+</script>
+
+</body>
+</html>
