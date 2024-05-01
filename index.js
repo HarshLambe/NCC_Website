@@ -2,7 +2,6 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const mongoose = require("mongoose");
-const { campgroundSchema } = require("./schemas.js");
 const catchAsync = require("./utils/catchAsync");
 const ExpressError = require("./utils/ExpressError");
 const methodOverride = require("method-override");
@@ -23,7 +22,7 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 
 const sessionConfig = {
-  secret: "thisshouldbeabettersecret!",
+  secret:use single inverted commas and give any key that u wish 'ur key here',
   resave: false,
   saveUninitialized: true,
   cookie: {
