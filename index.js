@@ -22,7 +22,7 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 
 const sessionConfig = {
-  secret:use single inverted commas and give any key that u wish 'ur key here',
+  secret:'thisisthekey',
   resave: false,
   saveUninitialized: true,
   cookie: {
