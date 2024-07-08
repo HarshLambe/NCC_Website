@@ -1,6 +1,12 @@
 # NCC Website
 
+
 This is a website for the National Cadet Corps (NCC), built using Express.js, Node.js, and JavaScript. The website provides information about the NCC, its mission, activities, and events.
+# Visit Website At 
+- **[Click here to visti the website](https://ncc-kitcoek.onrender.com)**
+
+
+
 
 ## Features
 
