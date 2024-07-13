@@ -7,7 +7,208 @@
     <link rel="icon" href="../images/kit logo.png" type="image/x-icon">
 </head>
 <body>
-    <% layout('../views/layout/boilerplate')%>
-    <h1>this is event page and website is still in developmet !!!!</h1>
+    <!-- <% layout('../views/layouts/newboilerplate')%> -->
+    <!-- <h1>this is event page and website is still in developmet !!!!</h1> -->
+
+
+    <style>
+        .news-container {
+          display: flex;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          width: 100%;
+          /* margin-top: 20px;
+          margin-bottom: 40px;  */
+          /* margin: 20px 0 40px;  */
+        }
+      
+        .news-card {
+          flex: 0 0 auto;
+          width: 400px;
+          padding: 20px;
+          margin-right: 10px;
+          background-color: #f0f0f0;
+          border-radius: 10px;
+          scroll-snap-align: start;
+          box-sizing: border-box;
+        }
+      
+        .news-card img {
+          max-width: 100%;
+          max-height: 100%;
+          display: block;
+          border-radius: 10px;
+          overflow: hidden;
+        }
+      </style>
+      </head>
+      <>
+          <h1 mt-4 style="text-align: center; font-weight: bold;">Farewell of 2022 Batch</h1>
+      
+      <div class="news-container">
+        <div class="news-card">
+        
+          <img src="/images/farewell1.jpg" alt="News 1 Image">
+          
+        </div>
+        <div class="news-card">
+          <img src="/images/farewell2.jpg" alt="News 2 Image">
+        </div>
+        <div class="news-card">
+          <!-- <h2>INS Hansa Visit</h2> -->
+          <img src="/images/farewell3.jpg" alt="News 3 Image">
+          <!-- <p>Cadets Visited INS HANSA</p> -->
+        </div>  
+        <div class="news-card">
+          <img src="/images/farewell4.jpg" alt="News 2 Image">
+        </div> 
+        <!-- Add more news cards as needed -->
+      
+      
+      </div>
+      
+      <h1 mt-4 style="text-align: center; font-weight: bold;">World Environment Day Celebration</h1>
+      
+      <div class="news-container">
+        <div class="news-card">
+          
+          <img src="/images/ev1.jpg" alt="News 1 Image">
+          
+        </div>
+        <div class="news-card">
+          
+          <img src="/images/ev2.jpg" alt="News 2 Image">
+        
+        </div>
+        <div class="news-card">
+          
+          <img src="/images/ev3.jpg" alt="News 3 Image">
+          
+        </div>
+        
+        <div class="news-card">
+         
+          <img src="/images/ev4.jpg" alt="News 3 Image">
+          
+        </div>
+        
+      </div>
+      
+      <h1 mt-4 style="text-align: center; font-weight: bold;">NCC Day Celebration</h1>
+      
+      <div class="news-container">
+        <div class="news-card">
+          
+          <img src="/images/ncc1.jpg" alt="News 1 Image">
+          
+        </div>
+        <div class="news-card">
+          
+          <img src="/images/ncc2.jpg" alt="News 2 Image">
+        
+        </div>
+        <div class="news-card">
+          
+          <img src="/images/ncc3.jpg" alt="News 3 Image">
+          
+        </div>
+        
+        <div class="news-card">
+         
+          <img src="/images/ncc4.jpg" alt="News 3 Image">
+          
+        </div>
+        </div>
+      
+        <!-- Add more news cards as needed -->
+        <h1 mt-4 style="text-align: center; font-weight: bold;">YOGA Day Celebration</h1>
+      
+      <div class="news-container">
+        <div class="news-card">
+          
+          <img src="/images/yoga1.jpg" alt="News 1 Image">
+          
+        </div>
+        <div class="news-card">
+          
+          <img src="/images/yoga2.jpg" alt="News 2 Image">
+        
+        </div>
+        <div class="news-card">
+          
+          <img src="/images/yoga3.jpg" alt="News 3 Image">
+          
+        </div>
+        
+        <div class="news-card">
+         
+          <img src="/images/yoga4.jpg" alt="News 3 Image">
+          
+        </div>
+      
+      </div>
+      <script>
+        let isDragging = false;
+        let initialX;
+      
+        document.addEventListener('mousedown', (e) => {
+          isDragging = true;
+          initialX = e.clientX;
+        });
+      
+        document.addEventListener('mouseup', () => {
+          isDragging = false;
+        });
+      
+        document.addEventListener('mousemove', (e) => {
+          if (!isDragging) return;
+      
+          const newsContainer = document.querySelector('.news-container');
+          const scrollSpeed = 2;
+          const deltaX = e.clientX - initialX;
+          newsContainer.scrollLeft -= deltaX * scrollSpeed;
+          initialX = e.clientX;
+        });
+      
+        // Show initial set of news cards
+        showInitialCards();
+      
+        // Show initial set of news cards
+        function showInitialCards() {
+          const newsContainer = document.querySelector('.news-container');
+          const newsCards = document.querySelectorAll('.news-card');
+          let visibleCount = 0;
+      
+          newsCards.forEach((card) => {
+            if (visibleCount < 3) {
+              card.style.display = 'block';
+              visibleCount++;
+            }
+          });
+      
+          newsContainer.addEventListener('scroll', () => {
+            if (newsContainer.scrollLeft + newsContainer.clientWidth >= newsContainer.scrollWidth) {
+              showNextCards();
+            }
+          });
+        }
+      
+        // Show next set of news cards
+        function showNextCards() {
+          const newsCards = document.querySelectorAll('.news-card');
+          let visibleCount = 0;
+      
+          newsCards.forEach((card) => {
+            if (card.style.display !== 'block' && visibleCount < 3) {
+              card.style.display = 'block';
+              visibleCount++;
+            }
+          });
+        }
+      </script>
+      
+      </body>
+      </html>
+      
 </body>
 </html>
