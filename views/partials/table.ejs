@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Styled Table</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    /* General Table Customization */
+    .table-custom {
+      background-color: #f9f9f9;
+      border: 2px solid #0a0a0a; /* Border around the table */
+      border-radius: .25rem;
+      overflow: hidden;
+      margin: 2rem 0; /* Margins around the table */
+    }
+    .table-custom th, .table-custom td {
+      text-align: center;
+      vertical-align: middle;
+      padding: 1rem;
+      border: 1px solid #dee2e6; /* Border for table cells */
+    }
+    
+    .table-custom thead th {
+      background-color: #0b3561;
+      color: #ffffff;
+    }
+    .table-custom tbody tr:nth-child(odd) {
+      background-color: #e9ecef;
+    }
+    .table-custom tbody tr:nth-child(even) {
+      background-color: #ffffff;
+    }
+    .table-custom tfoot td {
+      font-weight: bold;
+      background-color: #f1f1f1;
+    }
+
+    /* Targeting the last column for customization */
+    .table-custom td:last-child, .table-custom th:last-child {
+      /* Dark background for the last column */
+     /* White text for the last column */
+      font-weight: bold;
+  
+    }
+    .table-custom td:last-child:hover {
+      background-color: #495057; /* Slightly lighter on hover */
+    }
+
+    /* Heading Customization */
+    .table-heading {
+      text-align: center;
+      font-weight: bold;
+      margin: 2rem 0; /* Margins around the heading */
+      border-bottom: 2px solid #0b0b0b; /* Border under the heading */
+      padding-bottom: 0.5rem; /* Padding below the heading */
+      color: #0f0f10; /* Optional: Color to match the table border */
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5 pb-5">
+    <h2 class="table-heading">Total Cadets Enrolled Year Wise</h2>
+    <table class="table table-custom">
+      <thead>
+        
+          <th>BATCH</th>
+          <th>2024</th>
+          <th>2023</th>
+          <th>2022</th>
+          <th>2021</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+    
+        <tr>
+          <td>SD</td>
+          <td>24</td>
+          <td>18</td>
+          <td>10</td>
+          <td>20</td>
+          <td>72</td>
+        </tr>
+        <tr>
+          <td>SW</td>
+          <td>09</td>
+          <td>11</td>
+          <td>05</td>
+          <td>07</td>
+          <td>32</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>Total</td>
+          <td>33</td>
+          <td>29</td>
+          <td>15</td>
+          <td>27</td>
+          <td>104</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
